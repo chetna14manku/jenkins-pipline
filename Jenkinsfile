@@ -1,7 +1,15 @@
-properties([parameters([string(defaultValue: 'python', description: 'Package you want to install', name: 'PACKAGE')])])
+properties([
+    parameters([
+          string(
+	       defaultValue: 'python', 
+	       description: 'Package you want to install', 
+	       name: 'PACKAGE'
+	  )
+    ])
+])
 
-def call(Map config) {
-     node {
+//def call(Map config) {
+node {
           stage("Test") {
 	      // Test
 	  }
@@ -11,6 +19,6 @@ def call(Map config) {
 	   stage("Deploy") {
               // Deploy
           }
-     }
 }
+//}
 
