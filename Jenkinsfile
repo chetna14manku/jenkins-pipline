@@ -14,8 +14,8 @@ def call(Map config) {
     node {
           stage("Test") {
 	      // Test
-              def helper = new Helper()
-	      helper.printString('${params.PACKAGE}')
+              //def helper = new Helper()
+	      Helper.printString('${params.PACKAGE}')
 	  }
 	   stage("Build") {
               // Build
