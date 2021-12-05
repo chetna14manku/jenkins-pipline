@@ -1,4 +1,4 @@
-import src.Helper
+//import src.Helper
 
 properties([
     parameters([
@@ -10,8 +10,8 @@ properties([
     ])
 ])
 
-//def call(Map config) {
-node {
+def call(Map config) {
+    node {
           stage("Test") {
 	      // Test
               def helper = new Helper()
@@ -23,6 +23,6 @@ node {
 	   stage("Deploy") {
               // Deploy
           }
+    }
 }
-//}
 
