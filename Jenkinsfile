@@ -1,3 +1,5 @@
+import src.Helper
+
 properties([
     parameters([
           string(
@@ -12,6 +14,8 @@ properties([
 node {
           stage("Test") {
 	      // Test
+              def helper = new Helper()
+	      helper.printString('${params.PACKAGE}')
 	  }
 	   stage("Build") {
               // Build
