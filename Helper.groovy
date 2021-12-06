@@ -1,3 +1,5 @@
 def printString(String Name) {
-      log.info("Create String '${Name}' ")
+      echo ("Create String '${Name}' ")
 }
+
+return this
