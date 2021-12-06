@@ -1,5 +1,7 @@
+@Library(first') _
+
 //import src.Helper
-def gv
+//def gv
 
 properties([
     parameters([
@@ -17,10 +19,6 @@ node {
 	      // Test
               //def helper = new src.Helper()
 	      //helper.printString('${params.PACKAGE}')
-	      script {
-	               gv = load "Helper.groovy"
-		       gv.printString('${params.PACKAGE}')
-		  }
 	  }
 	   stage("Build") {
               // Build
