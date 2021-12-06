@@ -18,10 +18,12 @@ pipeline {
 
     stages {
           stage("Test") {
-	      gv.print("Hello")
-	      // Test
-              //def helper = new src.Helper()
-	      //helper.printString('${params.PACKAGE}')
+	      script {
+	          gv.print("Hello")
+	          // Test
+                  //def helper = new src.Helper()
+	        //helper.printString('${params.PACKAGE}')
+              }
 	  }
 	   stage("Build") {
               // Build
