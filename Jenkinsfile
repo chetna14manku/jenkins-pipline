@@ -13,6 +13,8 @@ properties([
 ])
 node {
      stage("Test") {
+           checkout scm
+	   gv = load 'Helper.groovy'
 	   gv.printString("Hello")
 	   // Test
            //def helper = new src.Helper()
