@@ -1,5 +1,5 @@
 #!groovy
-//import src.Helper
+
 def gv
 //def call(Map config) {
 properties([
@@ -14,7 +14,7 @@ properties([
 node {
      stage("Test") {
            checkout scm
-	   gv = load 'Helper.groovy'
+	   gv = load 'src/Helper.groovy'
 	   gv.printString("Hello")
 	   // Test
            //def helper = new src.Helper()
