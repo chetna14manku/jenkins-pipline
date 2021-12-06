@@ -5,9 +5,6 @@ def gv = load 'demo.groovy'
 
 pipeline {
     agent any
-    libraries {
-          lib('first@master')
-    }
      parameters {
           string(
                defaultValue: 'python',
