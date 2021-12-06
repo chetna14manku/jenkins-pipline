@@ -1,5 +1,5 @@
 //import src.Helper
-def gv = load "Helper.groovy"
+//def gv = load "Helper.groovy"
 
 properties([
     parameters([
@@ -18,6 +18,7 @@ node {
               //def helper = new src.Helper()
 	      //helper.printString('${params.PACKAGE}')
 	      script {
+	               def gv = load "Helper.groovy"
 		       gv.printString('${params.PACKAGE}')
 		  }
 	  }
