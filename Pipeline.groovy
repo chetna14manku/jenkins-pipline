@@ -10,10 +10,11 @@ properties([
 	  )
     ])
 ])
-def call(Map config) {
-   node {
+//def call(Map config) {
+node {
           stage("Test") {
 	      // Test
+	      echo ('${params.PACKAGE}')
               //def helper = new src.Helper()
 	      //helper.printString('${params.PACKAGE}')
 	  }
@@ -22,7 +23,6 @@ def call(Map config) {
           }
 	   stage("Deploy") {
               // Deploy
-          }
-   }
+           }
 }
-
+//}
