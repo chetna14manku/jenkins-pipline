@@ -1,4 +1,5 @@
 //import src.Helper
+def gv = load "Helper.groovy"
 
 properties([
     parameters([
@@ -10,12 +11,15 @@ properties([
     ])
 ])
 
-def call(Map config) {
-    node {
+//def call(Map config) {
+node {
           stage("Test") {
 	      // Test
-              def helper = new Helper()
-	      helper.printString('${params.PACKAGE}')
+              //def helper = new src.Helper()
+	      //helper.printString('${params.PACKAGE}')
+	      script {
+		       gv.printString('${params.PACKAGE}')
+		  }
 	  }
 	   stage("Build") {
               // Build
@@ -23,6 +27,6 @@ def call(Map config) {
 	   stage("Deploy") {
               // Deploy
           }
-    }
 }
+//}
 
