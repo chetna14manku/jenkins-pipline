@@ -11,8 +11,8 @@ properties([
     ])
 ])
 
-def call(Map config) {
-    node {
+//def call(Map config) {
+node {
           stage("Test") {
 	      // Test
               //def helper = new src.Helper()
@@ -28,5 +28,5 @@ def call(Map config) {
 	   stage("Deploy") {
               // Deploy
           }
-    }
 }
+
