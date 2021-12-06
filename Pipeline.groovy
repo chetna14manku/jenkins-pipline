@@ -14,7 +14,7 @@ properties([
 node {
           stage("Test") {
 	      // Test
-	      echo ('${params.PACKAGE}')
+	      echo "${params.PACKAGE}"
               //def helper = new src.Helper()
 	      //helper.printString('${params.PACKAGE}')
 	  }
