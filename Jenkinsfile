@@ -1,28 +1,39 @@
-//import src.Helper
+//#!/usr/bin/env groovy
 
-properties([
-    parameters([
+//import src.Helper
+def gv = load "Helper.groovy"
+
+pipeline {
+   agent any
+   parameters{
           string(
 	       defaultValue: 'python', 
 	       description: 'Package you want to install', 
 	       name: 'PACKAGE'
 	  )
-    ])
-])
+    }
 
-//def call(Map config) {
-node {
+   stages {
           stage("Test") {
+	      steps {
 	      // Test
               //def helper = new Helper()
-	      Helper.printString('${params.PACKAGE}')
+	      //helper.printString('${params.PACKAGE}')
+	          script {
+		       gv.printString('${params.PACKAGE}')
+		  }
+	      }
 	  }
 	   stage("Build") {
+	      steps {
               // Build
+	      }
           }
 	   stage("Deploy") {
+	       steps {
               // Deploy
+	      }
           }
+   }
 }
-//}
 
