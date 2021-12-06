@@ -1,21 +1,21 @@
-@Library(first') _
 
 //import src.Helper
 //def gv
-
-properties([
-    parameters([
-          string(
-	       defaultValue: 'python', 
-	       description: 'Package you want to install', 
-	       name: 'PACKAGE'
-	  )
-    ])
-])
-
 //def call(Map config) {
+
 pipeline {
     agent any
+    libraries {
+          lib('first@masteri')
+    }
+     parameters {
+          string(
+               defaultValue: 'python',
+               description: 'Package you want to install',
+               name: 'PACKAGE'
+          )
+    }
+
     stages {
           stage("Test") {
 	      // Test
