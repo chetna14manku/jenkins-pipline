@@ -30,12 +30,12 @@ pipeline {
 
 	   stage("Build") {
              steps {
-	     // Build
+	       echo "Build"
 	     }
           }
 	   stage("Deploy") {
               steps {
-	      // Deploy
+	         echo "Deploy"
                }
 	  }
 
