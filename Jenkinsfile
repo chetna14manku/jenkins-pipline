@@ -16,9 +16,6 @@ pipeline {
    stages {
           stage("Test") {
 	      steps {
-	      // Test
-              //def helper = new Helper()
-	      //helper.printString('${params.PACKAGE}')
 	          script {
 		       gv.printString('${params.PACKAGE}')
 		  }
@@ -26,13 +23,13 @@ pipeline {
 	  }
 	   stage("Build") {
 	      steps {
-              // Build
-	      }
+	        echo 'Build'
+              }
           }
 	   stage("Deploy") {
 	       steps {
-              // Deploy
-	      }
+	         echo 'Deploy'
+               }
           }
    }
 }
