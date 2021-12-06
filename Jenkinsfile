@@ -1,6 +1,6 @@
 #!groovy
 //import src.Helper
-//def gv
+def gv = load 'demo.groovy'
 //def call(Map config) {
 
 pipeline {
@@ -18,6 +18,7 @@ pipeline {
 
     stages {
           stage("Test") {
+	      gv.print("Hello")
 	      // Test
               //def helper = new src.Helper()
 	      //helper.printString('${params.PACKAGE}')
