@@ -14,17 +14,20 @@ properties([
 ])
 
 //def call(Map config) {
-node {
+pipeline {
+    agent any
+    stages {
           stage("Test") {
 	      // Test
               //def helper = new src.Helper()
 	      //helper.printString('${params.PACKAGE}')
-	  }
+	  
 	   stage("Build") {
               // Build
           }
 	   stage("Deploy") {
               // Deploy
           }
+    }	  
 }
 
