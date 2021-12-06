@@ -10,17 +10,12 @@ properties([
 	  )
     ])
 ])
-
-//def call(Map config) {
-node {
+def call(Map config) {
+   node {
           stage("Test") {
 	      // Test
               //def helper = new src.Helper()
 	      //helper.printString('${params.PACKAGE}')
-	      script {
-	               def gv = load "Helper.groovy"
-		       gv.printString('${params.PACKAGE}')
-		  }
 	  }
 	   stage("Build") {
               // Build
@@ -28,6 +23,6 @@ node {
 	   stage("Deploy") {
               // Deploy
           }
+   }
 }
-//}
 
