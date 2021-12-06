@@ -21,7 +21,7 @@ pipeline {
 	      // Test
               //def helper = new src.Helper()
 	      //helper.printString('${params.PACKAGE}')
-	  
+	  }
 	   stage("Build") {
               // Build
           }
