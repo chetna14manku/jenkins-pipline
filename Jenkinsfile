@@ -1,4 +1,4 @@
-
+#!groovy
 //import src.Helper
 //def gv
 //def call(Map config) {
@@ -6,7 +6,7 @@
 pipeline {
     agent any
     libraries {
-          lib('first@masteri')
+          lib('first@master')
     }
      parameters {
           string(
@@ -21,7 +21,7 @@ pipeline {
 	      // Test
               //def helper = new src.Helper()
 	      //helper.printString('${params.PACKAGE}')
-	  
+	  }
 	   stage("Build") {
               // Build
           }
