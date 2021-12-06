@@ -1,41 +1,27 @@
 #!groovy
 //import src.Helper
-def gv = load 'demo.groovy'
+def gv
 //def call(Map config) {
-
-pipeline {
-    agent any
-     parameters {
+properties([
+     parameters ([
           string(
                defaultValue: 'python',
                description: 'Package you want to install',
                name: 'PACKAGE'
           )
-    }
-
-    stages {
-          stage("Test") {
-	    steps {
-	      script {
-	          gv.print("Hello")
-	          // Test
-                  //def helper = new src.Helper()
-	        //helper.printString('${params.PACKAGE}')
-              }
-	    }
-	  }
-
-	   stage("Build") {
-             steps {
+    ])
+])
+node {
+     stage("Test") {
+	   gv.printString("Hello")
+	   // Test
+           //def helper = new src.Helper()
+     }
+     stage("Build") {
 	       echo "Build"
-	     }
-          }
-	   stage("Deploy") {
-              steps {
+     }
+     stage("Deploy") {
 	         echo "Deploy"
-               }
-	  }
-
-    }	  
-}
+     }
+}	  
 
