@@ -5,7 +5,7 @@ def printString(String Name) {
       echo ("Create String '${Name}' ")
 }
 
-def createEnv(String venvName, String pythonv="/usr/bin/python3.6", Boolean SitePackages=false, Boolean upgrade=true) {
+def createEnv(String venvName, String pythonv="/usr/bin/python3.6", Boolean sitePackages=false, Boolean upgrade=true) {
       sh("""
       virtualenv --python ${pythonv} \
       ${sitePackages ? "--system-site-packages" : ""} \
