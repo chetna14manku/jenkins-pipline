@@ -1,4 +1,4 @@
-
+#!groovy
 //import src.Helper
 //def gv
 //def call(Map config) {
