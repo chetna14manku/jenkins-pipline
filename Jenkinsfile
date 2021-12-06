@@ -15,7 +15,7 @@ node {
      stage("Test") {
            checkout scm
 	   gv = load 'src/Helper.groovy'
-	   gv.printString("Hello")
+	   gv.createEnv('envs')
 	   // Test
            //def helper = new src.Helper()
      }
