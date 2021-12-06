@@ -6,7 +6,7 @@
 pipeline {
     agent any
     libraries {
-          lib('first@masteri')
+          lib('first@master')
     }
      parameters {
           string(
