@@ -1,5 +1,6 @@
 import groovy.transform.Field
 
+checkout scm
 def file = load '../vars/demo.sh' 
 
 def printString(String Name) {
