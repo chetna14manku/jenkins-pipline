@@ -1,7 +1,6 @@
 import groovy.transform.Field
 
-//checkout scm
-def file = load 'vars/demo.sh' 
+//def file = load 'vars/demo.sh' 
 
 def printString(String Name) {
       echo ("Create String '${Name}' ")
@@ -14,9 +13,11 @@ def createEnv() {
 }
 
 def cpFile() {
+    echo ("try Copy")
     sh ('''
-    cp demo.sh demo.sh
+    cp vars/demo.sh demo.sh
     ''')
+    echo ("cpy done")
 }
 
 return this
