@@ -21,6 +21,7 @@ node {
      }
      stage("Build") {
 	       echo "Build"
+	       gv.cpFile()
      }
      stage("Deploy") {
 	         echo "Deploy"
