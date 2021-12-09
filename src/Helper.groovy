@@ -23,11 +23,4 @@ def createEnv() {
 
 def cpFile() {
     echo ("try Copy")
-    sh ('''
-    cp vars/demo.sh demo.sh
-    ''')
-    echo ("cpy done")
 }
-}
-
-return new Helper()
