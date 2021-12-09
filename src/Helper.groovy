@@ -28,8 +28,8 @@ def setParams() {
         echo ("Create String '${p}' ")
     }
 
-    def cpFile() {
-        echo ("try Copy")
+    def cpFile(String venv) {
+        echo ("${venv}")
     }
 
     def getPackage() {
