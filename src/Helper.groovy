@@ -26,4 +26,4 @@ class Helper {
     }
 }    
 
-return Helper()
+return new Helper()
