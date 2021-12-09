@@ -21,8 +21,8 @@ String p
         echo ("try Copy")
     }
 
-    String getPackage() {
-        return '${params.PACKAGE}'
+    def getPackage() {
+        return "${params.PACKAGE}"
     }
     
 return this
