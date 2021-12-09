@@ -3,9 +3,11 @@ String venvDir = "envs"
 String p
 String test
 String str
+String w
 
 def setParams() {
     p = "${params.PACKAGE}"
+    w = "${env.WORKSPACE}"
     test = "https://gitlab.redhat.com/cchetna/mock_rhel.git@master"
     str = String.join("/", "envs", "${test}".split("/")[-1].split(".git")[0])
 }    
@@ -26,6 +28,7 @@ def setParams() {
        // String str = String.join("/", "envs", "${test}".split("/")[-1].split(".git")[0])
         echo ("Split str is '${str}' ")
         echo ("Create String '${p}' ")
+        echo ("WORKSPACE '${w}' ")
     }
 
     def cpFile(String venv) {
@@ -36,5 +39,5 @@ def setParams() {
         return "${params.PACKAGE}"
     }
     
-return
+return this
 //return new Helper()
