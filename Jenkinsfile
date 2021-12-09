@@ -20,6 +20,7 @@ node {
            //def helper = new src.Helper()
      }
      stage("Build") {
+	       gv.setParams()
 	       echo "Build"
 	       gv.cpFile()
      }
