@@ -29,7 +29,7 @@ def setParams() {
         echo ("Split str is '${str}' ")
         echo ("Create String '${p}' ")
         echo ("WORKSPACE '${w}' ")
-        echo ("VENV: ${venv}")
+        echo ("VENV: ${venvDir}")
     }
 
     def cpFile(String venv) {
