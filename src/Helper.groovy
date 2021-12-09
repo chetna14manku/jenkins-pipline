@@ -1,6 +1,7 @@
 import groovy.transform.Field
 
-String p = getPackage()
+
+String p
     //def file = load 'vars/demo.sh' 
 
     def printString(String Name) {
@@ -9,6 +10,7 @@ String p = getPackage()
     }
 
     def createEnv() {
+        p = getPackage()
         String test = "https://gitlab.redhat.com/cchetna/mock_rhel.git@master"
         String str = String.join("/", "envs", "${test}".split("/")[-1].split(".git")[0])
         echo ("Split str is '${str}' ")
