@@ -1,5 +1,5 @@
 import groovy.transform.Field
-
+Sting venvDir = "envs"
 String p
 String test
 String str
