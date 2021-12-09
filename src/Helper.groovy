@@ -36,5 +36,5 @@ def setParams() {
         return "${params.PACKAGE}"
     }
     
-return this
+return
 //return new Helper()
