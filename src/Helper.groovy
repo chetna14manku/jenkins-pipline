@@ -2,7 +2,7 @@ import groovy.transform.Field
 
 class Helper {
     
-    String p = "${params.PACKAGE}"
+    String p = args.get("p", getPackage())
     //def file = load 'vars/demo.sh' 
 
     def printString(String Name) {
@@ -19,5 +19,9 @@ class Helper {
 
     def cpFile() {
         echo ("try Copy")
+    }
+
+    def getPackage() {
+        return '${params.PACKAGE}'
     }
 }    
