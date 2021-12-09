@@ -2,7 +2,7 @@ import groovy.transform.Field
 
 class Helper {
     
-    String p = args.get(getPackage())
+    String p = getPackage()
     //def file = load 'vars/demo.sh' 
 
     def printString(String Name) {
