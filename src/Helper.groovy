@@ -1,11 +1,6 @@
 import groovy.transform.Field
 
-class Helper {
-
-    Helper helper = new Helper()
-
-    
-    String p = helper.getPackage()
+String p = getPackage()
     //def file = load 'vars/demo.sh' 
 
     def printString(String Name) {
@@ -27,6 +22,6 @@ class Helper {
     String getPackage() {
         return '${params.PACKAGE}'
     }
-}    
-
+    
+return this
 //return new Helper()
