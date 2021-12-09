@@ -21,7 +21,7 @@ class Helper {
         echo ("try Copy")
     }
 
-    def getPackage() {
+    String getPackage() {
         return '${params.PACKAGE}'
     }
 }    
