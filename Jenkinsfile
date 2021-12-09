@@ -22,7 +22,7 @@ node {
      stage("Build") {
 	       
 	       echo "Build"
-	     gv.cpFile("${gv.venvDir}")
+	     //gv.cpFile("${gv.venvDir}")
      }
      stage("Deploy") {
 	         echo "Deploy"
