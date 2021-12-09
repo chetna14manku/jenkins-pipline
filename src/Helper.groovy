@@ -2,7 +2,7 @@ import groovy.transform.Field
 
 class Helper {
 
-    Helper helper = new helper()
+    Helper helper = new Helper()
 
     
     String p = helper.getPackage()
