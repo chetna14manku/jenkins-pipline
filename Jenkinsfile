@@ -2,6 +2,7 @@
 
 def gv
 def check
+String check2
 
 //def call(Map config) {
 properties([
