@@ -36,8 +36,10 @@ node {
 
 def printString(String Name) {
       check = "Yupp working!!"
+      check2 = "Yupp its also working!!"
   //    setParams()
       echo ("Create String '${Name}' ")
       echo ("Create String '${check}' ")
+      echo ("Create String '${check2}' ")
 }
 
