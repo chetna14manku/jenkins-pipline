@@ -1,6 +1,8 @@
 #!groovy
 
 def gv
+def check
+
 //def call(Map config) {
 properties([
      parameters ([
@@ -32,8 +34,9 @@ node {
 }	  
 
 def printString(String Name) {
+      check = "Yupp working!!"
   //    setParams()
       echo ("Create String '${Name}' ")
-//      echo ("Create String '${p}' ")
+      echo ("Create String '${check}' ")
 }
 
