@@ -13,6 +13,7 @@ properties([
 ])
 node {
      stage("Test") {
+           printString("CHETNA")
            checkout scm
 	   gv = load 'src/Helper.groovy'
 	   gv.printString("checkName")
@@ -29,4 +30,10 @@ node {
 	         echo "Deploy"
      }
 }	  
+
+def printString(String Name) {
+  //    setParams()
+      echo ("Create String '${Name}' ")
+//      echo ("Create String '${p}' ")
+}
 
