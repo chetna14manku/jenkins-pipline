@@ -15,6 +15,9 @@ properties([
     ])
 ])
 node {
+     environment {
+	     VERSION = "1.0"
+     }
      stage("Test") {
            printString("CHETNA")
            checkout scm
@@ -31,6 +34,7 @@ node {
      }
      stage("Deploy") {
 	         echo "Deploy"
+	         
      }
 }	  
 
@@ -41,5 +45,6 @@ def printString(String Name) {
       echo ("Create String '${Name}' ")
       echo ("Create String '${check}' ")
       echo ("Create String '${check2}' ")
+      echo ("--VERSION: '${VERSION}' ")
 }
 
