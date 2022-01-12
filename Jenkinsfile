@@ -42,9 +42,9 @@ def checkLoop() {
 	} else {
 		def packs = ""
 	}
-	echo "Print package param: '${params.PACKAGE}' "
+	echo ("Print package param: '${params.PACKAGE}' ")
 	for (pkg in packs) {
-		sh ()
+		echo ("Check pkg selected: xx'${params.pkg}'xx ")
 	}
 }
 
