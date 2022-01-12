@@ -8,14 +8,15 @@ String check2
 properties([
      parameters ([
           string(
-               defaultValue: 'python',
-               description: 'Package you want to install',
+               defaultValue: 'all',
+               description: 'Package separated by comma you want to install',
                name: 'PACKAGE'
           )
     ])
 ])
 node {
      stage("Test") {
+	   checkLoop()  
            printString("CHETNA")
            checkout scm
 	   gv = load 'src/Helper.groovy'
@@ -35,6 +36,17 @@ node {
 	         
      }
 }	  
+def checkLoop() {
+	if ("${params.PACKAGE}" != "all") {
+		def packs = ["${params.PACKAGE}"]
+	} else {
+		def packs = ""
+	}
+	echo "Print package param: '${params.PACKAGE}' "
+	for (pkg in packs) {
+		sh ()
+	}
+}
 
 def printString(String Name) {
       check = "Yupp working!!"
