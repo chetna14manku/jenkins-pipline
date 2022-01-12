@@ -39,7 +39,7 @@ node {
 def checkLoop() {
 	def packs
 	if ("${params.PACKAGE}" != "all") {
-		packs = ["python" , "java"]
+		packs = ["${params.PACKAGE}"]
 	} else {
 		packs = ""
 	}
