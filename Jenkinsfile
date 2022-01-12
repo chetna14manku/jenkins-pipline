@@ -37,10 +37,11 @@ node {
      }
 }	  
 def checkLoop() {
+	def packs
 	if ("${params.PACKAGE}" != "all") {
-		def packs = ["${params.PACKAGE}"]
+		packs = ["${params.PACKAGE}"]
 	} else {
-		def packs = ""
+		packs = ""
 	}
 	echo ("Print package param: '${packs}' ")
 	for (pkg in packs) {
