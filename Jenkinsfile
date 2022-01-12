@@ -39,7 +39,7 @@ node {
 def checkLoop() {
 	def packs
 	if ("${params.PACKAGE}" != "all") {
-		packs = ["${params.PACKAGE}"]
+		packs = "${params.PACKAGE}".split(',')
 	} else {
 		packs = " "
 	}
