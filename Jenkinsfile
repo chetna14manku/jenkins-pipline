@@ -37,8 +37,8 @@ node {
      }
 }	  
 def checkLoop() {
-	sh ('date')
-	def packs = "all"
+	
+	def packs = all
 	if ("${params.PACKAGE}" != "all") {
 		packs = "${params.PACKAGE}".split(',')
 	} 
