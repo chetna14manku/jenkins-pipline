@@ -46,8 +46,8 @@ def checkLoop() {
 	echo ("Print package param: '${packs}' ")
 	for (pkg in packs) {
                 def pkg1 = pkg.trim()
-		def check = "${names}" == "all" ? "" ? "${pkg1}"
-		echo ("Print pkg inside loop: '${pkg}' ")
+		def check = "${names}" == "all" ? "" : "${pkg1}"
+		echo ("Print pkg inside loop: oo'${check}'oo ")
 	}
 }
 
