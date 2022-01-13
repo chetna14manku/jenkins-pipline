@@ -37,12 +37,10 @@ node {
      }
 }	  
 def checkLoop() {
-	def packs
+	def packs = "all"
 	if ("${params.PACKAGE}" != "all") {
 		packs = "${params.PACKAGE}".split(',')
-	} else {
-		packs = ' '
-	}
+	} 
 	echo ("Print package param: '${packs}' ")
 	for (pkg in packs) {
                 def pkg1 = pkg.trim()
