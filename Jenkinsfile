@@ -41,7 +41,7 @@ def checkLoop() {
 	if ("${params.PACKAGE}" != "all") {
 		packs = "${params.PACKAGE}".split(',')
 	} else {
-		packs = " "
+		packs = ' '
 	}
 	echo ("Print package param: '${packs}' ")
 	for (pkg in packs) {
