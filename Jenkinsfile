@@ -42,22 +42,17 @@ def checkLoop() {
 	sh("""
 	 cat >check.sh <<EOL
          #!/usr/bin/env bash
-
          out1=$(pwd)
-
          echo "output1 : $out1"
-
          if [ "$out1" != "" ]
          then
          echo "out1 is not emptyy"
          fi
-
-          for lang in python java c
-          do
-          echo "language is $lang"
-          done
-
-          EOL
+         for lang in python java c
+         do
+         echo "language is $lang"
+         done
+         EOL
 	   """)
 	
 	sh "./check.sh"
