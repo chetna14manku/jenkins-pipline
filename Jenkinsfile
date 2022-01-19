@@ -42,7 +42,7 @@ def checkLoop() {
 	sh("""
 	for lang in python java c; do 
 	for num in 1 2; do
-	echo "$num $lang"; done;
+	echo $num $lang; done;
 	echo "language is $lang"; done
 	""")
 	
