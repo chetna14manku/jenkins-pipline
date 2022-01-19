@@ -41,8 +41,8 @@ def checkLoop() {
 	def l = "python java c"
 	sh("""
 	for lang in python java c; do 
-	for class in 1st 2nd; do
-	echo "$class $lang"; done;
+	for num in 1 2; do
+	echo "$num $lang"; done;
 	echo "language is $lang"; done
 	""")
 	
