@@ -17,7 +17,7 @@ properties([
 node {
      stage("Test") {
 	   runSteps("whoamx")
-	   runSteps("ls")
+	   runSteps("ls -l")
            runSteps("some-invalid-command")
 	   checkLoop()  
            printString("CHETNA")
@@ -43,6 +43,7 @@ node {
 def runSteps(def script) {
     try {
             def stdout = sh(script: script, returnStdout: true)
+	    print("${stdout}")
             print("Success!")
         } catch (Exception ex) {
             print(ex)
