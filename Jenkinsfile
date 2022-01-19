@@ -37,6 +37,7 @@ node {
      }
 }	  
 def checkLoop() {
+	sh "pwd"
 	
 	sh("""
 	for lang in python java c;do;
