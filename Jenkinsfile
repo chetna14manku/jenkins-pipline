@@ -49,6 +49,8 @@ def checkLoop() {
           EOL
 	   """)
 	
+	sh "cat check.sh"
+	
 	def packs = " "
 	
 	if ("${params.PACKAGE}" != "all") {
