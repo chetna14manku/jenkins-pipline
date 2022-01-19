@@ -44,6 +44,9 @@ def runSteps(def script) {
     try {
             def stdout = sh(script: script, returnStdout: true)
 	    print("${stdout}")
+	    for (out in stdout.split('\n')) {
+		    print("line: $out")
+	    }
             print("Success!")
         } catch (Exception ex) {
             print(ex)
