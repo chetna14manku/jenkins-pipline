@@ -16,6 +16,9 @@ properties([
 ])
 node {
      stage("Test") {
+	   runSteps("whoamx")
+	   runSteps("ls")
+           runSteps("some-invalid-command")
 	   checkLoop()  
            printString("CHETNA")
            checkout scm
@@ -35,27 +38,21 @@ node {
 	         archiveArtifacts artifacts: '**'
 	         
      }
-}	  
+}
+
+def runSteps(def script) {
+    try {
+            def stdout = sh(script: script, returnStdout: true)
+            print("Success!")
+        } catch (Exception ex) {
+            print(ex)
+            print("Failed!")
+        }
+}
+
 def checkLoop() {
 	sh "pwd"
 	def l = "python java c"
-	sh("""
-	 cat >check.sh <<EOL
-         #!/usr/bin/env bash
-         out1=$(pwd)
-         echo "output1 : $out1"
-         if [ "$out1" != "" ]
-         then
-         echo "out1 is not emptyy"
-         fi
-         for lang in python java c
-         do
-         echo "language is $lang"
-         done
-         EOL
-	   """)
-	
-	sh "./check.sh"
 	
 	def packs = " "
 	
