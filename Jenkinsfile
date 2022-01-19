@@ -38,6 +38,11 @@ node {
 }	  
 def checkLoop() {
 	
+	sh("""
+	for lang in python java c;do;
+        echo "language is $lang";done
+	""")
+	
 	def packs = " "
 	
 	if ("${params.PACKAGE}" != "all") {
