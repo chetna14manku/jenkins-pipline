@@ -41,15 +41,26 @@ def checkLoop() {
 	def l = "python java c"
 	sh("""
 	 cat >check.sh <<EOL
-         line 1,
-         line 2, 
-         line 3,
-         line 4 line
-         ... 
+         #!/usr/bin/env bash
+
+         out1=$(pwd)
+
+         echo "output1 : $out1"
+
+         if [ "$out1" != "" ]
+         then
+         echo "out1 is not emptyy"
+         fi
+
+          for lang in python java c
+          do
+          echo "language is $lang"
+          done
+
           EOL
 	   """)
 	
-	sh "cat check.sh"
+	sh "./check.sh"
 	
 	def packs = " "
 	
