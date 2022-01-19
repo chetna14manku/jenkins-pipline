@@ -39,7 +39,15 @@ node {
 def checkLoop() {
 	sh "pwd"
 	def l = "python java c"
-	def output = sh(script: "set +x && pwd && cd interop ;set -x;echo 0 ", returnStdout: true)
+	sh("""
+	 cat >check.sh <<EOL
+         line 1, ${kernel}
+         line 2, 
+         line 3, ${distro}
+         line 4 line
+         ... 
+          EOL
+	   """)
 	
 	def packs = " "
 	
