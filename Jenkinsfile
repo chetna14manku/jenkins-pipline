@@ -40,7 +40,8 @@ def checkLoop() {
 	sh "pwd"
 	def l = "python java c"
 	sh("""
-	for lang in python java c; do echo "language is $lang"; done
+	for lang in python java c; do 
+	echo "language is $lang"; done
 	""")
 	
 	def packs = " "
