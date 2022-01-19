@@ -39,12 +39,7 @@ node {
 def checkLoop() {
 	sh "pwd"
 	def l = "python java c"
-	sh("""
-	for lang in python java c; do 
-	for num in 1 2; do
-	echo $num $lang; done;
-	echo "language is $lang"; done
-	""")
+	def output = sh(script: "set +x && pwd && cd interop && set -x && echo 0", returnStdout: true)
 	
 	def packs = " "
 	
