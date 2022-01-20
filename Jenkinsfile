@@ -19,7 +19,7 @@ node {
 	   runSteps("whoamx")
 	   def output = runSteps("ls -l")
 	   for (out in output.split('\n')) {
-		    runsteps($out)
+		   runsteps("${out}")
 	   }
            runSteps("some-invalid-command")
 	   checkLoop()  
