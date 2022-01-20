@@ -52,7 +52,7 @@ def runSteps(def script) {
             def stdout = sh(script: script, returnStdout: true)
 	    return stdout
         } catch (Exception ex) {
-            return none
+             print("Failed!")
         }
 }
 
