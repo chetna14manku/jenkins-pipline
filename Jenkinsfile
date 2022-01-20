@@ -53,6 +53,7 @@ def runSteps(def script) {
 	    return stdout
         } catch (Exception ex) {
              print("Failed!")
+	     return
         }
 }
 
