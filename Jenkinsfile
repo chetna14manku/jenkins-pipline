@@ -17,7 +17,7 @@ properties([
 node {
      stage("Test") {
 	   runSteps("whoamx")
-	   def output = runSteps("ls -l")
+	   def output = runSteps("cd demo/")
 	   for (out in output.split('\n')) {
 		   echo ("running function for ${out}")
 		   runSteps("${out}")
