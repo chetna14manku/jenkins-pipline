@@ -19,6 +19,7 @@ node {
 	   runSteps("whoamx")
 	   def output = runSteps("ls -l")
 	   for (out in output.split('\n')) {
+		   echo ("running function for ${out}")
 		   runSteps("${out}")
 	   }
            runSteps("some-invalid-command")
