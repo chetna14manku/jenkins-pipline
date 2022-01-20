@@ -46,9 +46,9 @@ node {
 def runSteps(def script) {
     try {
             def stdout = sh(script: script, returnStdout: true)
-	    
+	    return stdout
         } catch (Exception ex) {
-            return
+            return ""
         }
 }
 
