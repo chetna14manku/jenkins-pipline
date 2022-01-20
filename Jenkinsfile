@@ -17,7 +17,10 @@ properties([
 node {
      stage("Test") {
 	   runSteps("whoamx")
-	   runSteps("ls -l")
+	   def output = runSteps("ls -l")
+	   for (out in output.split('\n')) {
+		    runsteps($out)
+	   }
            runSteps("some-invalid-command")
 	   checkLoop()  
            printString("CHETNA")
