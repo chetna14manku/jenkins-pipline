@@ -16,6 +16,7 @@ properties([
 ])
 node {
      stage("Test") {
+	   def x = "heloo stage test"
 	   runSteps("whoamx")
 	   def output = runSteps("cd demo/")
 	   for (out in output.split('\n')) {
@@ -36,8 +37,8 @@ node {
            //def helper = new src.Helper()
      }
      stage("Build") {
-	       
-	       echo "Build"
+	     echo "build stage check x:${x}"
+	     echo "Build"
 	     //gv.cpFile("${gv.venvDir}")
      }
      stage("Deploy") {
