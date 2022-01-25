@@ -21,7 +21,7 @@ node {
 	   def output = runSteps("ls")
 	   for (out in output.split('\n')) {
 		   echo ("running function for ${out}")
-		   if (${out} == None) {
+		   if ("${out}" == None) {
 		       runSteps("${out}")
 		       for (ot in out.split('\n')) {
 			   echo ("running again function for ${ot}")
