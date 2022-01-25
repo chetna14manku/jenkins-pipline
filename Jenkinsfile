@@ -37,7 +37,6 @@ node {
            //def helper = new src.Helper()
      }
      stage("Build") {
-	     echo "build stage check x:${x}"
 	     echo "Build"
 	     //gv.cpFile("${gv.venvDir}")
      }
