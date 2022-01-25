@@ -18,7 +18,7 @@ node {
      stage("Test") {
 	   def x = "heloo stage test"
 	   runSteps("whoamx")
-	   def output = runSteps("ls -lta")
+	   def output = runSteps("ls")
 	   for (out in output.split('\n')) {
 		   echo ("running function for ${out}")
 		   runSteps("${out}")
