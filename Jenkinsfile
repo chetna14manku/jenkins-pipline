@@ -56,7 +56,7 @@ def checkLoop() {
 	String userRegex = ".*java.*|.*C++.*|.*python.*"
 	def userSplit = userRegex.replace(".*", "")
 	echo ("After split userRegex: rr'${userSplit}'rr ")
-        def packs = userRegex.replace(".*", "").split("|")
+        def packs = userRegex.replace(".*", "").split("\\|")
         
 	def l = "python java c"
 	
