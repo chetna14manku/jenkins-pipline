@@ -19,15 +19,7 @@ node {
 	   def x = "heloo stage test"
 	   runSteps("whoamx")
 	   def output = runSteps("ls")
-	   for (out in output.split('\n')) {
-		   echo ("running function for ${out}")
-		   if ("${out}" == None) {
-		       runSteps("${out}")
-		       for (ot in out.split('\n')) {
-			   echo ("running again function for ${ot}")
-		       }
-		   }	   
-	   }
+	   
            runSteps("some-invalid-command")
 	   checkLoop()  
            printString("CHETNA")
@@ -61,9 +53,14 @@ def runSteps(def script) {
 
 def checkLoop() {
 	sh "pwd"
+	String userRegex = ".*java.*|.*C++.*|.*python.*"
+	def userSplit = userRegex.replace(".*", "")
+	echo ("After split userRegex: rr'${userSplit}'rr ")
+        def packs = userRegex.replace(".*", "").split("\\|")
+        
 	def l = "python java c"
 	
-	def packs = " "
+	//def packs = " "
 	
 	if ("${params.PACKAGE}" != "all") {
 		packs = "${params.PACKAGE}".split(',')
