@@ -16,11 +16,10 @@ properties([
 ])
 node {
      stage("Test") {
-	   def x = "heloo stage test"
-	   runSteps("whoamx")
-	   def output = runSteps("ls")
-	   
-           runSteps("some-invalid-command")
+	   //def x = "heloo stage test"
+	   //runSteps("whoamx")
+	   //def output = runSteps("ls")
+           //runSteps("some-invalid-command")
 	   checkLoop()  
            printString("CHETNA")
            checkout scm
@@ -75,6 +74,17 @@ def checkLoop() {
 			echo ("Print pkg1 inside loop: pp'${pkg1}'pp ")
 		}
 	}
+	if ("${params.PACKAGE}" == "all") {
+		echo ("Running cleanup for servers that are left...")
+		try{
+			def lss = sh(script:"ls -lta", returnStdout: true)
+			for (ls in lss.split('\n')) {
+			}
+		} catch (Exception ex) {
+			echo ("No resource left to clean!!")
+		}
+	}
+	echo ("Done checklooop fucnction")
 }
 
 def printString(String Name) {
