@@ -79,6 +79,7 @@ def checkLoop() {
 		try{
 			def lss = sh(script:"ls -lta", returnStdout: true)
 			for (ls in lss.split('\n')) {
+				echo ("ls -lta result: '${ls}' ")
 			}
 		} catch (Exception ex) {
 			echo ("No resource left to clean!!")
