@@ -77,7 +77,7 @@ def checkLoop() {
 	if ("${params.PACKAGE}" == "all") {
 		echo ("Running cleanup for servers that are left...")
 		try{
-			def lss = sh(script:"ls -lta", returnStdout: true)
+			def lss = sh(script:"whoamix", returnStdout: true)
 			for (ls in lss.split('\n')) {
 				echo ("ls -lta result: '${ls}' ")
 			}
